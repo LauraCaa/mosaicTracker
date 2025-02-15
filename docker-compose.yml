@@ -1,0 +1,12 @@
+services:
+  mosaic-tracker:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ".:/opt/mosaic-tracker"
+      - "/opt/mosaic-tracker/node_modules"
+    environment:
+      - NEXT_WEBPACK_USEPOLLING=true
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
